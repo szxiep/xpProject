@@ -1,0 +1,174 @@
+[INFO] [15:10:22.014] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: com.mysql.jdbc.Driver@7cbf8d42
+[INFO] [15:10:22.078] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: oracle.jdbc.driver.OracleDriver@4ca0b29a
+[INFO] [15:10:22.120] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: org.postgresql.Driver@28963f34
+[INFO] [15:10:22.316] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: SQLServerDriver:2
+[INFO] [15:10:22.317] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: org.sqlite.JDBC@2ff2e573
+[INFO] [15:10:22.318] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://112.74.124.155:3306/fortune?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [15:10:22.318] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getTableNames:55 --> getTableNames, connection url: jdbc:mysql://112.74.124.155:3306/fortune?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [15:10:22.318] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://112.74.124.155:3306/fortune?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [15:10:22.807] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnection:49 --> getConnection, connection url: com.mysql.jdbc.JDBC4Connection@225c8c8e
+[INFO] [15:11:23.729] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [15:11:24.468] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnection:49 --> getConnection, connection url: com.mysql.jdbc.JDBC4Connection@5b70ca3b
+[INFO] [15:11:28.444] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [15:11:28.444] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getTableNames:55 --> getTableNames, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [15:11:28.445] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [15:11:29.472] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnection:49 --> getConnection, connection url: com.mysql.jdbc.JDBC4Connection@76efe94f
+[INFO] [15:11:47.680] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.loadGeneratorConfigs:180 --> sql: SELECT * FROM generator_config
+[INFO] [15:11:49.820] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.loadGeneratorConfig:157 --> sql: SELECT * FROM generator_config where name='user'
+[INFO] [15:12:27.831] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.loadGeneratorConfigs:180 --> sql: SELECT * FROM generator_config
+[INFO] [15:13:25.538] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.findConnectorLibPath:213 --> jar resource: file:/D:/workspace/cxc/mybatis-generator-gui-master/target/classes/logback.xml
+[INFO] [15:13:25.543] [JavaFX Application Thread] [] com.zzg.mybatis.generator.bridge.MybatisGeneratorBridge.generate:60 --> connectorLibPath: D:\workspace\cxc\mybatis-generator-gui-master\target\classes\lib\mysql-connector-java-5.1.38.jar
+[INFO] [15:13:25.547] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [15:13:40.227] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.findConnectorLibPath:213 --> jar resource: file:/D:/workspace/cxc/mybatis-generator-gui-master/target/classes/logback.xml
+[INFO] [15:13:40.228] [JavaFX Application Thread] [] com.zzg.mybatis.generator.bridge.MybatisGeneratorBridge.generate:60 --> connectorLibPath: D:\workspace\cxc\mybatis-generator-gui-master\target\classes\lib\mysql-connector-java-5.1.38.jar
+[INFO] [15:13:40.228] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [15:50:23.385] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.loadGeneratorConfigs:180 --> sql: SELECT * FROM generator_config
+[INFO] [15:50:26.899] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.loadGeneratorConfig:157 --> sql: SELECT * FROM generator_config where name='user'
+[INFO] [15:50:44.264] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: com.mysql.jdbc.Driver@644478fe
+[INFO] [15:50:44.267] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: oracle.jdbc.driver.OracleDriver@70dd7786
+[INFO] [15:50:44.269] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: org.postgresql.Driver@2cf0d660
+[INFO] [15:50:44.306] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: SQLServerDriver:2
+[INFO] [15:50:44.307] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: org.sqlite.JDBC@2d2998f2
+[INFO] [15:50:44.307] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [15:50:44.308] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getTableNames:55 --> getTableNames, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [15:50:44.308] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[ERROR] [15:50:45.429] [JavaFX Application Thread] [] com.zzg.mybatis.generator.controller.MainUIController.lambda$3:168 --> Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_131]
+	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_131]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404) ~[na:na]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:981) ~[na:na]
+	at com.mysql.jdbc.MysqlIO.readPacket(MysqlIO.java:628) ~[na:na]
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1014) ~[na:na]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2255) ~[na:na]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2286) ~[na:na]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2085) ~[na:na]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795) ~[na:na]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[na:na]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_131]
+	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_131]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404) ~[na:na]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400) ~[na:na]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327) ~[na:na]
+	at com.zzg.mybatis.generator.util.DbUtil.getConnection(DbUtil.java:48) ~[classes/:na]
+	at com.zzg.mybatis.generator.util.DbUtil.getTableNames(DbUtil.java:56) ~[classes/:na]
+	at com.zzg.mybatis.generator.controller.MainUIController.lambda$3(MainUIController.java:153) ~[classes/:na]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[jfxrt.jar:na]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[jfxrt.jar:na]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[jfxrt.jar:na]
+	at javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3470) ~[jfxrt.jar:na]
+	at javafx.scene.Scene$ClickGenerator.access$8100(Scene.java:3398) ~[jfxrt.jar:na]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3766) ~[jfxrt.jar:na]
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485) ~[jfxrt.jar:na]
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762) ~[jfxrt.jar:na]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494) ~[jfxrt.jar:na]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:381) ~[jfxrt.jar:na]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295) ~[jfxrt.jar:na]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.8.0_131]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(GlassViewEventHandler.java:417) ~[jfxrt.jar:na]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389) ~[jfxrt.jar:na]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:416) ~[jfxrt.jar:na]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555) ~[jfxrt.jar:na]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) ~[jfxrt.jar:na]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[jfxrt.jar:na]
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191) ~[jfxrt.jar:na]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.8.0_131]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_131]
+	at java.net.SocketInputStream.socketRead(Unknown Source) ~[na:1.8.0_131]
+	at java.net.SocketInputStream.read(Unknown Source) ~[na:1.8.0_131]
+	at java.net.SocketInputStream.read(Unknown Source) ~[na:1.8.0_131]
+	at com.mysql.jdbc.util.ReadAheadInputStream.fill(ReadAheadInputStream.java:100) ~[na:na]
+	at com.mysql.jdbc.util.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:143) ~[na:na]
+	at com.mysql.jdbc.util.ReadAheadInputStream.read(ReadAheadInputStream.java:173) ~[na:na]
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:2954) ~[na:na]
+	at com.mysql.jdbc.MysqlIO.readPacket(MysqlIO.java:560) ~[na:na]
+	... 53 common frames omitted
+[INFO] [15:50:48.682] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [15:50:48.683] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getTableNames:55 --> getTableNames, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [15:50:48.683] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [15:50:48.946] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnection:49 --> getConnection, connection url: com.mysql.jdbc.JDBC4Connection@41fd41f8
+[INFO] [15:51:16.838] [JavaFX Application Thread] [] com.zzg.mybatis.generator.controller.MainUIController.saveGeneratorConfig:277 --> user choose name: ast
+[INFO] [15:51:34.990] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.findConnectorLibPath:213 --> jar resource: file:/D:/workspace/cxc/mybatis-generator-gui-master/target/classes/logback.xml
+[INFO] [15:51:34.990] [JavaFX Application Thread] [] com.zzg.mybatis.generator.bridge.MybatisGeneratorBridge.generate:60 --> connectorLibPath: D:\workspace\cxc\mybatis-generator-gui-master\target\classes\lib\mysql-connector-java-5.1.38.jar
+[INFO] [15:51:34.993] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [15:51:40.307] [JavaFX Application Thread] [] com.zzg.mybatis.generator.controller.MainUIController.saveGeneratorConfig:277 --> user choose name: ast
+[INFO] [15:51:42.366] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.loadGeneratorConfigs:180 --> sql: SELECT * FROM generator_config
+[DEBUG] [15:51:44.098] [JavaFX Application Thread] [] com.zzg.mybatis.generator.controller.GeneratorConfigController.lambda$1:75 --> item: user
+[INFO] [15:51:44.099] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.deleteGeneratorConfig:202 --> sql: DELETE FROM generator_config where name='user'
+[INFO] [15:51:44.256] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.loadGeneratorConfigs:180 --> sql: SELECT * FROM generator_config
+[DEBUG] [15:51:44.442] [JavaFX Application Thread] [] com.zzg.mybatis.generator.controller.GeneratorConfigController.lambda$1:75 --> item: ast
+[INFO] [15:51:44.443] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.deleteGeneratorConfig:202 --> sql: DELETE FROM generator_config where name='ast'
+[INFO] [15:51:44.493] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.loadGeneratorConfigs:180 --> sql: SELECT * FROM generator_config
+[INFO] [15:51:48.562] [JavaFX Application Thread] [] com.zzg.mybatis.generator.controller.MainUIController.saveGeneratorConfig:277 --> user choose name: ast
+[INFO] [15:51:51.125] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.loadGeneratorConfigs:180 --> sql: SELECT * FROM generator_config
+[INFO] [16:35:16.351] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.loadGeneratorConfigs:180 --> sql: SELECT * FROM generator_config
+[INFO] [16:35:17.610] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.loadGeneratorConfig:157 --> sql: SELECT * FROM generator_config where name='ast'
+[INFO] [16:35:18.487] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: com.mysql.jdbc.Driver@186fb810
+[INFO] [16:35:18.489] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: oracle.jdbc.driver.OracleDriver@12befbf
+[INFO] [16:35:18.493] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: org.postgresql.Driver@7742b5de
+[INFO] [16:35:18.531] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: SQLServerDriver:2
+[INFO] [16:35:18.531] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: org.sqlite.JDBC@5d08d1aa
+[INFO] [16:35:18.531] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [16:35:18.532] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getTableNames:55 --> getTableNames, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [16:35:18.532] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [16:35:18.823] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnection:49 --> getConnection, connection url: com.mysql.jdbc.JDBC4Connection@68add3
+[INFO] [16:35:33.567] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.findConnectorLibPath:213 --> jar resource: file:/D:/workspace/cxc/mybatis-generator-gui-master/target/classes/logback.xml
+[INFO] [16:35:33.568] [JavaFX Application Thread] [] com.zzg.mybatis.generator.bridge.MybatisGeneratorBridge.generate:60 --> connectorLibPath: D:\workspace\cxc\mybatis-generator-gui-master\target\classes\lib\mysql-connector-java-5.1.38.jar
+[INFO] [16:35:33.570] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [16:35:37.169] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.findConnectorLibPath:213 --> jar resource: file:/D:/workspace/cxc/mybatis-generator-gui-master/target/classes/logback.xml
+[INFO] [16:35:37.169] [JavaFX Application Thread] [] com.zzg.mybatis.generator.bridge.MybatisGeneratorBridge.generate:60 --> connectorLibPath: D:\workspace\cxc\mybatis-generator-gui-master\target\classes\lib\mysql-connector-java-5.1.38.jar
+[INFO] [16:35:37.170] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [18:00:22.069] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: com.mysql.jdbc.Driver@1f09012a
+[INFO] [18:00:22.075] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: oracle.jdbc.driver.OracleDriver@5c84a239
+[INFO] [18:00:22.077] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: org.postgresql.Driver@54975fcb
+[INFO] [18:00:22.116] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: SQLServerDriver:2
+[INFO] [18:00:22.117] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: org.sqlite.JDBC@3c997b30
+[INFO] [18:00:22.117] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [18:00:22.117] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getTableNames:55 --> getTableNames, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [18:00:22.118] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [18:00:22.415] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnection:49 --> getConnection, connection url: com.mysql.jdbc.JDBC4Connection@320b12c9
+[INFO] [18:00:22.884] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.loadGeneratorConfigs:180 --> sql: SELECT * FROM generator_config
+[INFO] [18:00:24.622] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.loadGeneratorConfig:157 --> sql: SELECT * FROM generator_config where name='ast'
+[INFO] [18:00:35.002] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.findConnectorLibPath:213 --> jar resource: file:/D:/workspace/cxc/mybatis-generator-gui-master/target/classes/logback.xml
+[INFO] [18:00:35.004] [JavaFX Application Thread] [] com.zzg.mybatis.generator.bridge.MybatisGeneratorBridge.generate:60 --> connectorLibPath: D:\workspace\cxc\mybatis-generator-gui-master\target\classes\lib\mysql-connector-java-5.1.38.jar
+[INFO] [18:00:35.007] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [18:14:42.949] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: com.mysql.jdbc.Driver@2bdbd796
+[INFO] [18:14:42.955] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: oracle.jdbc.driver.OracleDriver@46df21ce
+[INFO] [18:14:42.958] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: org.postgresql.Driver@493de7a9
+[INFO] [18:14:42.996] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: SQLServerDriver:2
+[INFO] [18:14:42.997] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.<clinit>:32 --> load driver class: org.sqlite.JDBC@3a1890b2
+[INFO] [18:14:42.997] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [18:14:42.997] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getTableNames:55 --> getTableNames, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [18:14:42.998] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8
+[INFO] [18:14:43.295] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnection:49 --> getConnection, connection url: com.mysql.jdbc.JDBC4Connection@719dda82
+[INFO] [18:14:44.060] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.loadGeneratorConfigs:180 --> sql: SELECT * FROM generator_config
+[INFO] [18:14:45.550] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.loadGeneratorConfig:157 --> sql: SELECT * FROM generator_config where name='ast'
+[INFO] [18:14:56.016] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.ConfigHelper.findConnectorLibPath:213 --> jar resource: file:/D:/workspace/cxc/mybatis-generator-gui-master/target/classes/logback.xml
+[INFO] [18:14:56.017] [JavaFX Application Thread] [] com.zzg.mybatis.generator.bridge.MybatisGeneratorBridge.generate:60 --> connectorLibPath: D:\workspace\cxc\mybatis-generator-gui-master\target\classes\lib\mysql-connector-java-5.1.38.jar
+[INFO] [18:14:56.021] [JavaFX Application Thread] [] com.zzg.mybatis.generator.util.DbUtil.getConnectionUrlWithSchema:113 --> getConnectionUrlWithSchema, connection url: jdbc:mysql://rm-wz94985s63t088s7a.mysql.rds.aliyuncs.com:3306/cxc?useUnicode=true&useSSL=false&characterEncoding=utf8

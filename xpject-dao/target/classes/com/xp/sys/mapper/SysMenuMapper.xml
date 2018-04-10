@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xp.sys.api.SysMenuMapper">
+  <resultMap id="BaseResultMap" type="com.xp.sys.entity.SysMenu">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="parentid" jdbcType="INTEGER" property="parentid" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, parentid, url, level, icon, sort, status
+  </sql>
+  <select id="selectByExample" parameterType="com.xp.sys.entity.SysMenu" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sys_menu
+    where status = 1
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.xp.sys.entity.SysMenu">
+    delete from sys_menu
+    where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="com.xp.sys.entity.SysMenu">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_menu (name, parentid, url, 
+      level, icon, sort, 
+      status)
+    values (#{name,jdbcType=VARCHAR}, #{parentid,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, 
+      #{level,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER})
+  </insert>
+  
+  <select id="countByExample" parameterType="com.xp.sys.entity.SysMenu" resultType="java.lang.Long">
+    select count(*) from sys_menu
+    where status=1
+    <if test="name != null">
+      and name like 'xpject-dao%'
+    </if>
+  </select>
+  <update id="updateByExample" parameterType="com.xp.sys.entity.SysMenu">
+    update sys_menu
+    set 
+      name = #{name,jdbcType=VARCHAR},
+      parentid = #{parentid,jdbcType=INTEGER},
+      url = #{url,jdbcType=VARCHAR},
+      level = #{level,jdbcType=INTEGER},
+      icon = #{icon,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER}
+      where id = #{id}
+  </update>
+  
+</mapper>

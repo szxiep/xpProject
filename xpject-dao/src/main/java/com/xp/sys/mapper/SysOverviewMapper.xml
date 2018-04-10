@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xp.sys.api.SysOverviewMapper">
+  <resultMap id="BaseResultMap" type="com.xp.sys.entity.SysOverview">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="titles" jdbcType="VARCHAR" property="titles" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, title, titles, author,content, createtime, updatetime, status
+  </sql>
+  <select id="selectByExample" parameterType="com.xp.sys.entity.SysOverview" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sys_overview
+    where status = 1
+    <if test="id != null">
+      and id = ${id}
+    </if>
+    <if test="title != null">
+      and title like '${title}%'
+    </if>
+    <if test="author != null">
+      and author like '${author}%'
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.xp.sys.entity.SysOverview">
+    delete from sys_overview
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xp.sys.entity.SysOverview">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_overview (title, titles, author, content,
+      createtime, updatetime, status, 
+      content)
+    values (#{title,jdbcType=VARCHAR}, #{titles,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR},  
+      #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, 
+      #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <select id="countByExample" parameterType="com.xp.sys.entity.SysOverview" resultType="java.lang.Long">
+    select count(1) from sys_overview
+    where status=1
+    <if test="title != null">
+      and title like '${title}%'
+    </if>
+  </select>
+  <update id="updateByExample" parameterType="com.xp.sys.entity.SysOverview">
+    update sys_overview
+    set 
+      title = #{record.title,jdbcType=VARCHAR},
+      titles = #{record.titles,jdbcType=VARCHAR},
+      author = #{record.author,jdbcType=VARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR},
+      createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      status = #{record.status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

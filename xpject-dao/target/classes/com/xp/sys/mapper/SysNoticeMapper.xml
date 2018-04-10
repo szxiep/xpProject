@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xp.sys.api.SysNoticeMapper">
+  <resultMap id="BaseResultMap" type="com.xp.sys.entity.SysNotice">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="titles" jdbcType="VARCHAR" property="titles" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, title, titles, author,content, createtime, updatetime, status
+  </sql>
+  
+  <select id="selectByExample" parameterType="com.xp.sys.entity.SysNotice" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sys_notice
+    where status = 1
+    <if test="id != null">
+      and id = com.business:xpject-dao:jar:0.0.1-SNAPSHOT
+    </if>
+    <if test="title != null">
+      and title like '${title}%'
+    </if>
+    <if test="author != null">
+      and author like '${author}%'
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  
+  <delete id="deleteByExample" parameterType="com.xp.sys.entity.SysNotice">
+    delete from sys_notice
+    where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="com.xp.sys.entity.SysNotice">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_notice (title, titles, author, content,
+      createtime, updatetime, status, 
+      content)
+    values (#{title,jdbcType=VARCHAR}, #{titles,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR},#{content,jdbcType=LONGVARCHAR},  
+      #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, 
+      #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  
+  <select id="countByExample" parameterType="com.xp.sys.entity.SysNotice" resultType="java.lang.Long">
+    select count(1) from sys_notice
+    where status=1
+    <if test="title != null">
+      and title like '${title}%'
+    </if>
+    <if test="author != null">
+      and author like '${author}%'
+    </if>
+  </select>
+  
+  <update id="updateByExample" parameterType="com.xp.sys.entity.SysNotice">
+    update sys_notice
+    set 
+      title = #{title,jdbcType=VARCHAR},
+      titles = #{titles,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id}
+  </update>
+</mapper>

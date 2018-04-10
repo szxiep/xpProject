@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" 
+	xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.business</groupId>
+    <artifactId>xpject</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>xpject-common</artifactId>
+  <name>工具类</name>
+  
+  <dependencies>
+		<!-- 时间操作组件 -->
+		<!-- <dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>${joda-time.version}</version>
+		</dependency> -->
+		<!-- Apache工具组件 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>${commons-net.version}</version>
+		</dependency>
+		<!-- Jackson Json处理工具包 -->
+		<!-- <dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency> -->
+		<!-- httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${httpclient.version}</version>
+		</dependency>
+		<!-- quartz任务调度框架 -->
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>${quartz.version}</version>
+		</dependency>
+		<!-- 单元测试 -->
+		<!-- <dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency> -->
+		<!-- 日志处理 -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<!--  七牛 -->
+		<dependency>
+			<groupId>com.qiniu</groupId>
+			<artifactId>qiniu-java-sdk</artifactId>
+			<!-- <version>7.0.0, 7.1.99]</version> -->
+		</dependency>
+	   	<dependency>  
+		    	<groupId>org.springframework</groupId>  
+		    	<artifactId>spring-aop</artifactId>  
+		    	<version>${spring.version}</version> 
+		 </dependency>
+		 <dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+		</dependency>
+		<!-- 缓存 -->
+		<dependency>
+			<groupId>com.business</groupId>
+			<artifactId>xpject-catch</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!--json-lib-->  
+		<!-- <dependency>  
+		    <groupId>net.sf.json-lib</groupId>  
+		    <artifactId>json-lib</artifactId>  
+		    <version>2.4</version>  
+		    <classifier>jdk15</classifier>  
+		</dependency> -->
+		
+		<!-- 阿里支付 -->
+		<dependency>
+		    <groupId>localjar.alipay</groupId>
+		    <artifactId>alipay-sdk-java</artifactId>
+		    <version>1.1.1</version>
+		</dependency>
+		
+		<!-- 阿里大于 -->
+		<dependency>
+		    <groupId>localjar.taobao</groupId>
+		    <artifactId>taobao-sdk-java-auto</artifactId>
+		    <version>1.1.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>localjar.taobao</groupId>
+		    <artifactId>aliyun-java-sdk-core</artifactId>
+		    <version>3.2.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>localjar.taobao</groupId>
+		    <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+		    <version>1.0.0</version>
+		</dependency>
+		
+		<!-- 七牛 -->
+		<dependency>
+			<groupId>com.qiniu</groupId>
+			<artifactId>qiniu-java-sdk</artifactId>
+			<version>7.2.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.thoughtworks.xstream</groupId>
+		    <artifactId>xstream</artifactId>
+		    <version>1.4.9</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		
+		<!-- 图片验证码生成器 -->
+	 	<dependency>
+		    <groupId>com.github.bingoohuang</groupId>
+		    <artifactId>patchca</artifactId>
+		    <version>0.0.1</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.squareup.okhttp/okhttp -->
+		<dependency>
+		    <groupId>com.squareup.okhttp</groupId>
+		    <artifactId>okhttp</artifactId>
+		    <version>2.7.5</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.7</version>
+		</dependency>
+  	</dependencies>
+</project>

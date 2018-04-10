@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.0.xsd
+http://code.alibabatech.com/schema/dubbo  
+http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util-4.0.xsd
+http://www.springframework.org/schema/jee
+http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.0.xsd
+http://www.springframework.org/schema/task
+http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+
+	<context:component-scan base-package="com"></context:component-scan>
+	<!-- 指定事务管理平台 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<!-- 事务通知 -->
+	<tx:advice id="txAdive" transaction-manager="transactionManager">
+		<tx:attributes>
+			<!-- 传播行为 -->
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="insert*" propagation="REQUIRED" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="create*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="*" propagation="REQUIRED" />
+			<tx:method name="find*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="select*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="get*" propagation="SUPPORTS" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+	<!-- 事务切面 -->
+	<aop:config>
+		<aop:advisor advice-ref="txAdive" pointcut="execution(* com.*.impl.*.*(..))"/>
+	</aop:config>
+	
+	<!-- 产品发布定时器 -->
+	<!-- <task:annotation-driven />
+	<bean id="quartzTimer" class="com.shunyu.service.core.quartz.VideoTimerTask"></bean>
+	<task:scheduled-tasks>
+		每分钟执行一次
+		<task:scheduled ref="quartzTimer" method="sendProduct" cron="0 0/1 * * * ?" />
+		每天凌晨执行一次
+		<task:scheduled ref="quartzTimer" method="gstStctistics" cron="0 0 1 * * ?" />
+		每天隔一小时执行一次
+		<task:scheduled ref="quartzTimer" method="sendhour" cron="0 * */1 * * ?" />
+	</task:scheduled-tasks> -->
+	
+	<!-- 引入dubbo配置 -->
+	<!-- <import resource="dubbo-provider.xml"/> -->
+	
+	<!-- 引入redis配置 -->
+	<!-- <import resource="spring-redis.xml"/> -->
+</beans>

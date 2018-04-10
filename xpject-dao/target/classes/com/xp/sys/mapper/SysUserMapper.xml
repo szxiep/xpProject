@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xp.sys.api.SysUserMapper">
+  <resultMap id="BaseResultMap" type="com.xp.sys.entity.SysUser">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, type, username, password, phone, createtime, updatetime, status
+  </sql>
+  <select id="selectByExample" parameterType="com.xp.sys.entity.SysUser" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sys_user
+    where status = 1
+    <if test="username != null">
+      and username = '${username}'
+    </if>
+    <if test="password != null">
+      and password = '${password}'
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.xp.sys.entity.SysUser">
+    delete from sys_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xp.sys.entity.SysUser">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_user (type, username, password, 
+      phone, createtime, updatetime, 
+      status)
+    values (#{type,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=INTEGER})
+  </insert>
+  <select id="countByExample" parameterType="com.xp.sys.entity.SysUser" resultType="java.lang.Long">
+    select count(1) from sys_user
+    where status = 1
+    <if test="username != null">
+      and username = ${username}
+    </if>
+  </select>
+  <update id="updateByExample" parameterType="com.xp.sys.entity.SysUser">
+    update sys_user
+    set
+      type = #{type,jdbcType=INTEGER},
+      username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <update id="disabledUser" parameterType="java.lang.Integer">
+    update sys_user set status = 0
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+</mapper>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo  
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd ">
+    
+    <!-- dubbo应用名，一般填成项目名称 -->
+	<dubbo:application name="ast1" />
+	
+	<!-- 注册中心的ip和端口配置 -->
+	<!-- <dubbo:registry address="zookeeper://127.0.0.1:2182" /> -->
+	<dubbo:registry address="zookeeper://127.0.0.1:2181" />
+	
+	<!-- 配置成dubbo协议，并且监听20880端口 -->
+	<dubbo:protocol name="dubbo" port="20880" />
+	<!-- <dubbo:protocol name="dubbo" port="20785" /> -->
+	
+	<!-- 服务端提供的接口 -->
+	<bean id="icharService" class="com.business.dubbo.ast.service.impl.CharServiceImpl" />
+	<dubbo:service interface="com.business.dubbo.ast.service.api.ICharService" ref="icharService" timeout="60000"/>
+	
+	<bean id="iNaCopyService" class="com.business.dubbo.ast.service.impl.NaCopyServiceImpl" />
+	<dubbo:service interface="com.business.dubbo.ast.service.api.INaCopyService" ref="iNaCopyService" timeout="60000"/>
+	
+	<bean id="iTrCopyService" class="com.business.dubbo.ast.service.impl.TrCopyServiceImpl" />
+	<dubbo:service interface="com.business.dubbo.ast.service.api.ITrCopyService" ref="iTrCopyService" timeout="60000"/>
+	
+	<bean id="iUserInfoService" class="com.business.dubbo.ast.service.impl.UserInfoServiceImpl" />
+	<dubbo:service interface="com.business.dubbo.ast.service.api.IUserInfoService" ref="iUserInfoService" timeout="60000"/>
+</beans>

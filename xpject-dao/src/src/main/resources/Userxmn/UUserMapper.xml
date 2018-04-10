@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="u.UUserMapper">
+  <resultMap id="BaseResultMap" type="com.cxc.dao.UUser">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="county" jdbcType="VARCHAR" property="county" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="saving" jdbcType="INTEGER" property="saving" />
+    <result column="datetime" jdbcType="TIMESTAMP" property="datetime" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="qqauth" jdbcType="VARCHAR" property="qqauth" />
+    <result column="wxauth" jdbcType="VARCHAR" property="wxauth" />
+    <result column="openid" jdbcType="VARCHAR" property="openid" />
+    <result column="wbauth" jdbcType="VARCHAR" property="wbauth" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="register" jdbcType="TIMESTAMP" property="register" />
+    <result column="header" jdbcType="VARCHAR" property="header" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, sex, province, county, city, saving, datetime, phone, qqauth, wxauth, openid, 
+    wbauth, password, register, header, status
+  </sql>
+  <select id="selectByExample" parameterType="com.cxc.dao.UUserExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from u_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from u_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from u_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.cxc.dao.UUserExample">
+    delete from u_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.cxc.dao.UUser">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into u_user (name, sex, province, 
+      county, city, saving, 
+      datetime, phone, qqauth, 
+      wxauth, openid, wbauth, 
+      password, register, header, 
+      status)
+    values (#{name,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{province,jdbcType=VARCHAR}, 
+      #{county,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{saving,jdbcType=INTEGER}, 
+      #{datetime,jdbcType=TIMESTAMP}, #{phone,jdbcType=VARCHAR}, #{qqauth,jdbcType=VARCHAR}, 
+      #{wxauth,jdbcType=VARCHAR}, #{openid,jdbcType=VARCHAR}, #{wbauth,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{register,jdbcType=TIMESTAMP}, #{header,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cxc.dao.UUser">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into u_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="county != null">
+        county,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="saving != null">
+        saving,
+      </if>
+      <if test="datetime != null">
+        datetime,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="qqauth != null">
+        qqauth,
+      </if>
+      <if test="wxauth != null">
+        wxauth,
+      </if>
+      <if test="openid != null">
+        openid,
+      </if>
+      <if test="wbauth != null">
+        wbauth,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="register != null">
+        register,
+      </if>
+      <if test="header != null">
+        header,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="county != null">
+        #{county,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="saving != null">
+        #{saving,jdbcType=INTEGER},
+      </if>
+      <if test="datetime != null">
+        #{datetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="qqauth != null">
+        #{qqauth,jdbcType=VARCHAR},
+      </if>
+      <if test="wxauth != null">
+        #{wxauth,jdbcType=VARCHAR},
+      </if>
+      <if test="openid != null">
+        #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="wbauth != null">
+        #{wbauth,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="register != null">
+        #{register,jdbcType=TIMESTAMP},
+      </if>
+      <if test="header != null">
+        #{header,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.cxc.dao.UUserExample" resultType="java.lang.Long">
+    select count(*) from u_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update u_user
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null">
+        sex = #{record.sex,jdbcType=INTEGER},
+      </if>
+      <if test="record.province != null">
+        province = #{record.province,jdbcType=VARCHAR},
+      </if>
+      <if test="record.county != null">
+        county = #{record.county,jdbcType=VARCHAR},
+      </if>
+      <if test="record.city != null">
+        city = #{record.city,jdbcType=VARCHAR},
+      </if>
+      <if test="record.saving != null">
+        saving = #{record.saving,jdbcType=INTEGER},
+      </if>
+      <if test="record.datetime != null">
+        datetime = #{record.datetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.phone != null">
+        phone = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qqauth != null">
+        qqauth = #{record.qqauth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wxauth != null">
+        wxauth = #{record.wxauth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.openid != null">
+        openid = #{record.openid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wbauth != null">
+        wbauth = #{record.wbauth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null">
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.register != null">
+        register = #{record.register,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.header != null">
+        header = #{record.header,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update u_user
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=INTEGER},
+      province = #{record.province,jdbcType=VARCHAR},
+      county = #{record.county,jdbcType=VARCHAR},
+      city = #{record.city,jdbcType=VARCHAR},
+      saving = #{record.saving,jdbcType=INTEGER},
+      datetime = #{record.datetime,jdbcType=TIMESTAMP},
+      phone = #{record.phone,jdbcType=VARCHAR},
+      qqauth = #{record.qqauth,jdbcType=VARCHAR},
+      wxauth = #{record.wxauth,jdbcType=VARCHAR},
+      openid = #{record.openid,jdbcType=VARCHAR},
+      wbauth = #{record.wbauth,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      register = #{record.register,jdbcType=TIMESTAMP},
+      header = #{record.header,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cxc.dao.UUser">
+    update u_user
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="county != null">
+        county = #{county,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="saving != null">
+        saving = #{saving,jdbcType=INTEGER},
+      </if>
+      <if test="datetime != null">
+        datetime = #{datetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="qqauth != null">
+        qqauth = #{qqauth,jdbcType=VARCHAR},
+      </if>
+      <if test="wxauth != null">
+        wxauth = #{wxauth,jdbcType=VARCHAR},
+      </if>
+      <if test="openid != null">
+        openid = #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="wbauth != null">
+        wbauth = #{wbauth,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="register != null">
+        register = #{register,jdbcType=TIMESTAMP},
+      </if>
+      <if test="header != null">
+        header = #{header,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cxc.dao.UUser">
+    update u_user
+    set name = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      province = #{province,jdbcType=VARCHAR},
+      county = #{county,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      saving = #{saving,jdbcType=INTEGER},
+      datetime = #{datetime,jdbcType=TIMESTAMP},
+      phone = #{phone,jdbcType=VARCHAR},
+      qqauth = #{qqauth,jdbcType=VARCHAR},
+      wxauth = #{wxauth,jdbcType=VARCHAR},
+      openid = #{openid,jdbcType=VARCHAR},
+      wbauth = #{wbauth,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      register = #{register,jdbcType=TIMESTAMP},
+      header = #{header,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

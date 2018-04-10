@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xp.sys.api.SysSignupMapper">
+  <resultMap id="BaseResultMap" type="com.xp.sys.entity.SysSignup">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="fortype" jdbcType="INTEGER" property="fortype" />
+    <result column="forprofession" jdbcType="INTEGER" property="forprofession" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  
+  <sql id="Base_Column_List">
+    id, name, sex, fortype, forprofession, phone, email, content, createtime, status
+  </sql>
+  <select id="selectByExample" parameterType="com.xp.sys.entity.SysSignup" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sys_signup
+    where status = 1
+    
+    <if test="name != null">
+      and name like '${name}%'
+    </if>
+    <if test="fortype != null">
+      and fortype = ${fortype}
+    </if>
+    <if test="forprofession != null">
+      and forprofession = ${forprofession}
+    </if>
+    
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.xp.sys.entity.SysSignup">
+    delete from sys_signup
+    where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="com.xp.sys.entity.SysSignup">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_signup (name, sex, fortype, 
+      forprofession, phone, email, 
+      content, createtime, status
+      )
+    values (#{name,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{fortype,jdbcType=INTEGER}, 
+      #{forprofession,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}
+      )
+  </insert>
+  <select id="countByExample" parameterType="com.xp.sys.entity.SysSignup" resultType="java.lang.Long">
+    select count(1) from sys_signup
+    where status=1
+    <if test="name != null">
+      and name like '${name}%'
+    </if>
+  </select>
+  <update id="updateByExample" parameterType="com.xp.sys.entity.SysSignup">
+    update sys_signup
+    set
+      name = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      fortype = #{fortype,jdbcType=INTEGER},
+      forprofession = #{forprofession,jdbcType=INTEGER},
+      phone = #{phone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER}
+      where id = #{id}
+  </update>
+</mapper>

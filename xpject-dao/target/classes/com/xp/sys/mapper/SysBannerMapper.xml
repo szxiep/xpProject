@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xp.sys.api.SysBannerMapper">
+  <resultMap id="BaseResultMap" type="com.xp.sys.entity.SysBanner">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="depict" jdbcType="VARCHAR" property="depict" />
+    <result column="imgurl" jdbcType="VARCHAR" property="imgurl" />
+    <result column="ckurl" jdbcType="VARCHAR" property="ckurl" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, type, title, depict, imgurl, ckurl,createtime, updatetime, status
+  </sql>
+  <select id="selectByExample" parameterType="com.xp.sys.entity.SysBanner" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sys_banner
+    where status =1
+	<if test="type != null">
+      and type = ${type}
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.xp.sys.entity.SysBanner">
+    delete from sys_banner
+    where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="com.xp.sys.entity.SysBanner">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_banner (type, title, depict, 
+      imgurl, ckurl,createtime, updatetime, status
+      )
+    values (#{type,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{depict,jdbcType=VARCHAR}, 
+      #{imgurl,jdbcType=VARCHAR}, #{ckurl,jdbcType=VARCHAR},#{createtime,jdbcType=TIMESTAMP},
+      #{updatetime,jdbcType=TIMESTAMP} #{status,jdbcType=INTEGER}
+      )
+  </insert>
+  
+  <select id="countByExample" parameterType="com.xp.sys.entity.SysBanner" resultType="java.lang.Long">
+    select count(1) from sys_banner
+    where status=1
+    <if test="type != null">
+      and type = ${type}
+    </if>
+  </select>
+  
+  <update id="updateByExample" parameterType="com.xp.sys.entity.SysBanner">
+    update sys_banner
+    set 
+      type = #{type,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      depict = #{depict,jdbcType=VARCHAR},
+      imgurl = #{imgurl,jdbcType=VARCHAR},
+      ckurl = #{ckurl,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id}
+  </update>
+  
+</mapper>
