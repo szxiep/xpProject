@@ -1,49 +1,314 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta content="点犀，辰星测，八字，占星，排盘，排星盘，八字专业工具，占星专业工具，智能测算用户管理" name="Keywords">
-<meta name="description" content="辰星测从2016年创立至今，致力于八字、占星专业领域服务工具研发 ，为专业用户搭建智能测算管理工具平台。" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="format-detection" content="telephone=no">
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="shortcut icon" href="images/favicon.png" type="image/png">
-<title> 深圳市点犀信息科技有限公司 , 点犀，辰星测，八字，占星，排盘，排星盘，八字专业工具，占星专业工具，智能测算用户管理</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-<link href="css/mobiscroll.2.13.2.css" rel="stylesheet" />
-<link rel="stylesheet" href="css/swiper.min.css">
-<link rel="stylesheet" type="text/css" href="iealert/style.css" />
-<link href="css/index.css" rel="stylesheet">
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// --> 
-<!--[if lt IE 9]>
-  <link href="css/bootstrap-ie8.css" rel="stylesheet">
-  <script src="js/html5shiv.min.js"></script>
-  <script src="js/respond.min.js"></script>
-<![endif]-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="shortcut icon" href="dist/images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="dist/css/normalize.css">
+    <link rel="stylesheet" href="dist/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/css/style.css">
 </head>
 
 <body>
-	<!-- 单个文件上传 -->
-	<!-- <form action="../admin/img_upload" method="post" enctype="multipart/form-data">
-           <input type="text" name="type" >
-           <input type="file" name="file"/>
-           <input type="submit" value="上传"/>
-    </form> -->
-    
-    <!-- 多个文件上传 -->
-	<form action="../admin/img_muchUpload" method="post" enctype="multipart/form-data">
-           <input type="text" name="type" >
-           <input type="file" name="file"/>
-           <input type="file" name="file"/>
-           <input type="file" name="file"/>
-           <input type="submit" value="上传"/>
-    </form>
-</body>
-<script>
+    <header id="header">
+        <!-- :::::::::: 顶部logo 电话 二维码 :::::::::: -->
+        <div id="header_top" class="container text-center">
+            <div class="row" v-bind:style="header_top_row">
+                <div class="col-md-6 ">
+                    <a href="index.html">
+                        <img v-bind:src="img.left.src" class="img-fluid" />
+                    </a>
+                </div>
+                <div class="header_top_phone col-md-4 col-8">
+                    <a v-bind:href="img.middle.link">
+                        <img v-bind:src="img.middle.src" v-bind:class="img.middle.class" />
+                    </a>
+                </div>
+                <div class="col-md-2 col-3">
+                    <img v-bind:src="img.right.src" v-bind:class="img.right.class" />
+                </div>
+            </div>
+        </div>
+        <!-- :::::::::: 顶部logo 电话 二维码 :::::::::: -->
+        <!-- :::::::::: 导航栏 与附加栏 :::::::::: -->
+        <div class="nav-all">
+            <nav class="navbar-light navbar navbar-expand-lg back-color-eee">
+                <div class="container">
+                    <!-- 缩小后展示 -->
+                    <!-- <div class="navbar-brand row" href="#">
+                        <div class="header_top_phone col-8">
+                            <a href="tel:0755-266551617">
+                                <img class="header_top_phone_img img-fluid img-light" src="dist/images/index/phone.png" alt=""/>
+                            </a>
+                        </div>
+                        <div class=" col-2">
+                            <img class="img-fluid float-left img-light " src="dist/images/index/2code.jpg" alt=""/>
+                        </div>
+                    </div> -->
+                    <!-- <a class="navbar-brand" href="#">Container</a> -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample" aria-controls="navbarsExample"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- 导航栏 链接 -->
+                    <div class=" collapse navbar-collapse row text-center" id="navbarsExample">
+                        <ul class="navbar-nav mr-auto col-lg-9 row">
+                            <!-- active -->
+                            <li v-for="asset in nav" v-bind:class="asset.class" @mouseenter="enter" @mouseleave="leave" class="nav-item col-lg">
+                                <a class="nav-link nav-color" v-bind:href="asset.link">{{ asset.text }}</a>
+                            </li>
+                        </ul>
+                        <!-- 搜索框 -->
+                        <form class="form-inline my-2 my-md-0 col-lg-3">
+                            <div class="nav-search-icon">
+                                <span>
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </div>
+                            <input class="nav-search form-control" type="text" placeholder="Search" aria-label="Search">
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <div @mouseleave="leave" class="nav-append" v-if="show">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col">
+                            <img class="img-fluid img-light" v-bind:src="navAdd.school.teacher.src" />
+                        </div>
+                        <div class="col-lg-2 col text-center">
+                            <p class="img-light">
+                                <a href="">
+                                    <small>{{ navAdd.school.teacher.text }}</small>
+                                    </br>
+                                    <small>{{ navAdd.school.teacher.time }}</small>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-lg-3 col">
+                            <p v-for="asset in navAdd.message.sort">
+                                <a v-bind:href="asset.link">{{ asset.p }}</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- :::::::::: 导航栏 与附加栏 :::::::::: -->
 
-</script>
+    </header>
+    <!-- :::::::::: 主体内容 :::::::::: -->
+    <section id="home" class="home-index">
+        <!-- :::::::::: 轮播图 :::::::::: -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="dist/images/index/lun1.jpg" alt="First slide" />
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="dist/images/index/lun2.jpg" alt="Second slide" />
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="dist/images/index/lun1.jpg" alt="Third slide" />
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <!-- :::::::::: 轮播图 :::::::::: -->
+        <!-- :::::::::: 内容 :::::::::: -->
+        <div class="container paddingTop5">
+            <!-- :::::::::: 上部 :::::::::: -->
+            <div class="row">
+                <!-- :::::::::: 学生活动 :::::::::: -->
+                <div class="col-lg-6 ">
+
+                    <div class="row home-activity">
+                        <div class="col-md-12 home-activity-top">
+                            <div class="home-activity-title">
+                                <a href="">学生活动</a>
+                            </div>
+                            <img class="img-fluid float-left img-light" v-bind:src="study.img.big" alt="" />
+                        </div>
+                        <div class="col-md-4 col home-activity-bottom" v-for="img in study.img.small">
+                            <a href="">
+                                <img v-bind:class="study.img.class" v-bind:src="img.src" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- :::::::::: 学生活动 :::::::::: -->
+                <!-- :::::::::: 新闻资讯 :::::::::: -->
+                <div class="col-lg-6 home-news">
+                    <!-- :::::::::: 标题 :::::::::: -->
+                    <div class="home-news-top">
+                        <!-- img-light -->
+                        <img class="img-fluid home-news-logo" src="dist/images/index/news-logo.png" alt="" />
+                        <span class="home-news-title">&nbsp;{{ news.head.title }}</span>
+                        <a class="color-homeHr home-news-more float-right" v-bind:href="news.head.link">
+                            更多信息 &#62;&#62;
+                        </a>
+                    </div>
+                    <div class="home-hr"></div>
+                    <!-- :::::::::: 标题 :::::::::: -->
+                    <!-- :::::::::: 预览摘要 :::::::::: -->
+                    <div class="home-news-show row">
+                        <div class="col-4">
+                            <img class="img-fluid " src="dist/images/index/news.jpg" alt="" />
+                        </div>
+                        <div class="col-8 text-right">
+                            <h6 class="text-left">{{ news.show.title }}</h6>
+                            <p class="text-left">
+                                <a v-bind:href="news.show.link">
+                                    {{ news.show.abstract }} &#62;&#62;
+                                </a>
+                            </p>
+                            <span class="color-homeHr">{{ news.show.time }}</span>
+                        </div>
+                    </div>
+                    <!-- :::::::::: 预览摘要 :::::::::: -->
+                    <p class="home-news-p" v-for="message in news.message">
+                        <a v-bind:href="message.link">
+                            <span>{{ message.text }}</span>
+                            <span class="color-homeHr float-right">{{ message.time }}</span>
+                        </a>
+                    </p>
+
+                </div>
+                <!-- :::::::::: 新闻资讯 :::::::::: -->
+            </div>
+            <!-- :::::::::: 上部 :::::::::: -->
+
+            <!-- :::::::::: 下部 :::::::::: -->
+            <div class="row">
+                <!-- :::::::::: 教育培训 :::::::::: -->
+                <div class="col-xl-4 paddingTop5">
+                    <!-- :::::::::: 标题 :::::::::: -->
+                    <div class="home-train-top">
+                        <!-- img-light -->
+                        <img class="img-fluid home-train-logo" src="dist/images/index/train-logo.png" alt="" />
+                        <span class="home-train-title">&nbsp;{{ trains.head.title }}</span>
+                        <a class="color-homeHr home-news-more float-right" v-bind:href="trains.head.link">
+                            更多信息 &#62;&#62;
+                        </a>
+                    </div>
+                    <!-- :::::::::: 标题 :::::::::: -->
+                    <div class="home-hr"></div>
+                    <p class="home-train-p" v-for="message in trains.message">
+                        <a v-bind:href="message.link">{{ message.text }}</a>
+                    </p>
+                </div>
+                <!-- :::::::::: 教育培训 :::::::::: -->
+                <!-- :::::::::: 通知公告 :::::::::: -->
+                <div class="col-xl-4 col-lg-6 paddingTop5">
+                    <!-- :::::::::: 标题 :::::::::: -->
+                    <div class="home-inform-top">
+                        <!-- img-light -->
+                        <img class="img-fluid home-inform-logo" src="dist/images/index/inform-logo.png" alt="" />
+                        <span class="home-inform-title">&nbsp;{{ inform.head.title }}</span>
+                        <a class="color-homeHr home-news-more float-right" v-bind:href="trains.head.link">
+                            更多信息 &#62;&#62;
+                        </a>
+                    </div>
+                    <div class="home-hr"></div>
+                    <!-- :::::::::: 标题 :::::::::: -->
+                    <div class="row home-inform-p" v-for="message in inform.message">
+                        <div class="col-3 home-inform-p-left text-center">
+                            <span class="home-inform-p-left-num">{{ message.num }}</span>
+                            </br>
+                            <span class="home-inform-p-left-date">{{ message.time }}</span>
+                        </div>
+                        <div class="col-9 home-inform-p-right">
+                            <a v-bind:href="message.link">
+                                <p class="home-inform-p-right-title">
+                                    {{ message.title }}
+                                </p>
+                                <p class="home-inform-p-right-text">
+                                    {{ message.text }}
+                                </p>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- :::::::::: 通知公告 :::::::::: -->
+                <!-- :::::::::: 学院概况 :::::::::: -->
+                <div class="col-xl-4 col-lg-6 paddingTop5 home-intro">
+                    <!-- :::::::::: 标题 :::::::::: -->
+                    <div class="home-intro-top">
+                        <!-- img-light -->
+                        <img class="img-fluid home-intro-logo" src="dist/images/index/intro-logo.png" alt="" />
+                        <span class="home-intro-title">&nbsp;{{ intro.head.title }}</span>
+                        <a class="color-homeHr home-news-more float-right" v-bind:href="intro.head.link">
+                            更多信息 &#62;&#62;
+                        </a>
+                    </div>
+                    <div class="home-hr"></div>
+                    <!-- :::::::::: 标题 :::::::::: -->
+                    <p class="home-intro-p" v-for="message in intro.message">
+                        <a href="">{{ message.text }}</a>
+                    </p>
+                </div>
+                <!-- :::::::::: 学院概况 :::::::::: -->
+
+            </div>
+        </div>
+        <!-- :::::::::: 内容 :::::::::: -->
+    </section>
+    <!-- :::::::::: 页脚 :::::::::: -->
+    <footer id="footer">
+        <img class="foot-bg" src="dist/images/index/bottom.png" alt="" />
+        <div class="container  foot-bottom">
+            <div class="row foot-bottom">
+                <div class="col-lg-4 ">
+                    <p class="img-light foot-link foot-link-text">
+
+                        <span v-for="link in links">
+                            <a v-bind:href="link.href">{{ link.text }}</a>
+                            {{ link.line }}
+                        </span>
+                    </p>
+                </div>
+                <div class="col-lg-7 ">
+                    <p class="img-light foot-text">
+                        {{ text.copyright }} &nbsp;&nbsp; {{ text.address }}
+                        </br>
+                        {{ text.phone }} &nbsp;&nbsp; {{ text.icp }}
+                    </p>
+                </div>
+                <div class="col-lg-1  foot-logo foot-text">
+                    <img class="img-fluid float-left img-light" v-bind:src="logo.src" />
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <!-- :::::::::: 页脚 :::::::::: -->
+
+
+
+
+
+    <script src="dist/js/jquery-3.2.1.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/vue.js"></script>
+    <script src="dist/js/index.js"></script>
+    <script src="dist/js/head-foot.js"></script>
+</body>
+
 </html>

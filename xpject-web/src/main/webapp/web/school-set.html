@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>院概况</title>
+    <link rel="shortcut icon" href="dist/images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="dist/css/normalize.css">
+    <link rel="stylesheet" href="dist/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+
+<body class="school-bg">
+    <header id="header">
+        <!-- :::::::::: 顶部logo 电话 二维码 :::::::::: -->
+        <div id="header_top" class="container text-center">
+            <div class="row" v-bind:style="header_top_row">
+                <div class="col-md-6 ">
+                    <a href="index.html">
+                        <img v-bind:src="img.left.src" class="img-fluid" />
+                    </a>
+                </div>
+                <div class="header_top_phone col-md-4 col-8">
+                    <a v-bind:href="img.middle.link">
+                        <img v-bind:src="img.middle.src" v-bind:class="img.middle.class" />
+                    </a>
+                </div>
+                <div class="col-md-2 col-3">
+                    <img v-bind:src="img.right.src" v-bind:class="img.right.class" />
+                </div>
+            </div>
+        </div>
+        <!-- :::::::::: 顶部logo 电话 二维码 :::::::::: -->
+        <!-- :::::::::: 导航栏 与附加栏 :::::::::: -->
+        <div class="nav-all">
+            <nav class="navbar-light navbar navbar-expand-lg back-color-eee">
+                <div class="container">
+                    <!-- 缩小后展示 -->
+                    <!-- <div class="navbar-brand row" href="#">
+                        <div class="header_top_phone col-8">
+                            <a href="tel:0755-266551617">
+                                <img class="header_top_phone_img img-fluid img-light" src="dist/images/index/phone.png" alt=""/>
+                            </a>
+                        </div>
+                        <div class=" col-2">
+                            <img class="img-fluid float-left img-light " src="dist/images/index/2code.jpg" alt=""/>
+                        </div>
+                    </div> -->
+                    <!-- <a class="navbar-brand" href="#">Container</a> -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample" aria-controls="navbarsExample"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- 导航栏 链接 -->
+                    <div class=" collapse navbar-collapse row text-center" id="navbarsExample">
+                        <ul class="navbar-nav mr-auto col-lg-9 row">
+                            <!-- active -->
+                            <li v-for="asset in nav" v-bind:class="asset.class" @mouseenter="enter" @mouseleave="leave" class="nav-item col-lg">
+                                <a class="nav-link nav-color" v-bind:href="asset.link">{{ asset.text }}</a>
+                            </li>
+                        </ul>
+                        <!-- 搜索框 -->
+                        <form class="form-inline my-2 my-md-0 col-lg-3">
+                            <div class="nav-search-icon">
+                                <span>
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </div>
+                            <input class="nav-search form-control" type="text" placeholder="Search" aria-label="Search">
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <div @mouseleave="leave" class="nav-append" v-if="show">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col">
+                            <img class="img-fluid img-light" v-bind:src="navAdd.school.teacher.src" />
+                        </div>
+                        <div class="col-lg-2 col text-center">
+                            <p class="img-light">
+                                <a href="">
+                                    <small>{{ navAdd.school.teacher.text }}</small>
+                                    </br>
+                                    <small>{{ navAdd.school.teacher.time }}</small>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-lg-3 col">
+                            <p v-for="asset in navAdd.message.sort">
+                                <a v-bind:href="asset.link">{{ asset.p }}</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- :::::::::: 导航栏 与附加栏 :::::::::: -->
+
+    </header>
+    <!-- :::::::::: 主体内容 :::::::::: -->
+    <section id="school" class="home-index">
+        <img class="img-fluid" src="dist/images/school/top.jpg" />
+        <!-- :::::::::: 内容 :::::::::: -->
+        <div class="container school">
+
+            <div class="row">
+                <!-- :::::::::: 左边栏 :::::::::: -->
+                <div class="col-md-3">
+                    <div class="school-left">
+                        <div class="school-bor"></div>
+                        <!-- :::::::::: 标题 :::::::::: -->
+                        <div class="home-news-top school">
+                            <!-- img-light -->
+                            <img class="img-fluid home-news-logo" src="dist/images/index/intro-logo.png" alt="" />
+                            <span class="home-news-title">&nbsp;院概况</span>
+                        </div>
+                        <div class="home-hr school-hr"></div>
+                        <!-- :::::::::: 标题 active 指示当前页 :::::::::: -->
+                        <p class="school-left-p ">
+                            <a v-bind:href="left.intro.link">{{ left.intro.text }}</a>
+                        </p>
+                        <p class="school-left-p active">
+                            <a v-bind:href="left.set.link">{{ left.set.text }}</a>
+                        </p>
+                        <p class="school-left-p">
+                            <a v-bind:href="left.history.link">
+                                {{ left.history.text }}
+                            </a>
+                        </p>
+                        <!-- :::::::::: 标题 :::::::::: -->
+                    </div>
+                </div>
+                <!-- :::::::::: 左边栏 :::::::::: -->
+                <!-- :::::::::: 右边展示内容 :::::::::: -->
+                <div class="col-md-9">
+                    <!-- :::::::::: 标题 :::::::::: -->
+                    <p class="school-right-title">研究院介绍
+                        <!-- :::::::::: 目录 :::::::::: -->
+                        <span class="float-right">首页 &gt; 院概况 &gt;
+                            <span>研究院介绍</span>
+                        </span>
+                    </p>
+                    <!-- :::::::::: 标题 :::::::::: -->
+                    <p class="school-right-basic">机构设置</p>
+                    <p class="school-set-text">
+                        {{ set.text }}
+                    </p>
+                    <div class="school-tree">
+                        <img class="img-fluid" src="dist/images/school/tree.png" alt="" />
+                    </div>
+                    <!-- 20 -->
+                    <div class="school-set-cont">
+                        <h6>
+                            一、领导介绍
+                        </h6>
+                        <div class="row school-padding5">
+                            <div class="col-lg-4 school-leader">
+                                <img class="school-leader-img img-fluid" src="dist/images/school/leader.png" alt="" />
+                            </div>
+                            <div class="col-lg-8">
+                                <!-- 20 -->
+                                <p class="school-lead">张元大</p>
+                                <p>工学博士，二级教授，博士生导师，国际欧亚科学院院士，"国家有突出贡献中青年专家"，深圳大学校长。国家重点基础研究发展计划(973计划)首席科学家，国家百千万人才工程国家级人选，教育部第六届科技委地学与资源环境学部常务副主任，"十一五"国家高技术研究发展计划(863计划)现代交通领域专家组成员，第九届中国青年科技奖获得者，国家自然科学基金委创新团队成员，教育部新世纪人才，国务院特殊津贴获得者;《测绘与地理信息》主编，《测绘学报》、《武汉大学学报》(信息科学版)编委，中国地理信息系统产业协会副主席。</p>
+                            </div>
+                        </div>
+                        <div class="row school-padding5">
+                            <div class="col-lg-4 school-leader">
+                                <img class="school-leader-img img-fluid" src="dist/images/school/leader.png" alt="" />
+                            </div>
+                            <div class="col-lg-8">
+                                <!-- 20 -->
+                                <p class="school-lead">张元二(副院长)</p>
+                                <p>工学博士，二级教授，博士生导师，国际欧亚科学院院士，"国家有突出贡献中青年专家"，深圳大学校长。国家重点基础研究发展计划(973计划)首席科学家，国家百千万人才工程国家级人选，教育部第六届科技委地学与资源环境学部常务副主任，"十一五"国家高技术研究发展计划(863计划)现代交通领域专家组成员，第九届中国青年科技奖获得者，国家自然科学基金委创新团队成员，教育部新世纪人才，国务院特殊津贴获得者;《测绘与地理信息》主编，《测绘学报》、《武汉大学学报》(信息科学版)编委，中国地理信息系统产业协会副主席。</p>
+                            </div>
+                        </div>
+
+                        <h6>
+                            二、环境介绍
+                        </h6>
+                        <p>
+                            1.综合办公室
+                        </p>
+                        <ul type="a">
+                            <li type="a">协助院领导做好院行政的日常工作，协调各部门的工作；</li>
+                            <li type="a">负责人事、财务管理及档案管理工作；</li>
+                            <li type="a">完成院务办公会议和院领导交办的工作；</li>
+                            <li type="a">负责全院固定资产、仪器设备的管理和物资采购工作；</li>
+                            <li type="a">负责对外、对内的接待和联系工作；</li>
+                            <li type="a">负责网站和微信公众平台运营和维护工作；</li>
+                            <li type="a">安排研究生在深圳实习工作。</li>
+                        </ul>
+                        <p>
+                            2.综合办公室
+                        </p>
+                        <ul type="a">
+                            <li type="a">协助院领导做好院行政的日常工作，协调各部门的工作；</li>
+                            <li type="a">负责人事、财务管理及档案管理工作；</li>
+                            <li type="a">完成院务办公会议和院领导交办的工作；</li>
+                            <li type="a">负责全院固定资产、仪器设备的管理和物资采购工作；</li>
+                            <li type="a">负责对外、对内的接待和联系工作；</li>
+                            <li type="a">负责网站和微信公众平台运营和维护工作；</li>
+                            <li type="a">安排研究生在深圳实习工作。</li>
+                        </ul>
+                        <p>
+                            3.综合办公室
+                        </p>
+                        <ul type="a">
+                            <li type="a">协助院领导做好院行政的日常工作，协调各部门的工作；</li>
+                            <li type="a">负责人事、财务管理及档案管理工作；</li>
+                            <li type="a">完成院务办公会议和院领导交办的工作；</li>
+                            <li type="a">负责全院固定资产、仪器设备的管理和物资采购工作；</li>
+                            <li type="a">负责对外、对内的接待和联系工作；</li>
+                            <li type="a">负责网站和微信公众平台运营和维护工作；</li>
+                            <li type="a">安排研究生在深圳实习工作。</li>
+                        </ul>
+                        <p>
+                            4.内设机构联系方式
+                        </p>
+                        <div class="row text-center school-set-table">
+                            <div class="col-sm-4 col-7 school-set-table-header">
+                                <p>部门（机构）</p>
+                                <p class="school-set-table1">综合办公室</p>
+                                <p class="school-set-table2">综合办公室</p>
+                                <p class="school-set-table1">综合办公室</p>
+                                <p class="school-set-table2">综合办公室</p>
+                                <p class="school-set-table1">综合办公室</p>
+                                <p class="school-set-table2">综合办公室</p>
+                                <p class="school-set-table1">综合办公室</p>
+                                <p class="school-set-table2">综合办公室</p>
+                                <p class="school-set-table1">综合办公室</p>
+                                <p class="school-set-table2">综合办公室</p>
+                            </div>
+                            <div class="col-sm-2 col-5 school-set-table-header">
+                                <p>联系人</p>
+                                <p class="school-set-table1 school-set-table-bor">李某某</p>
+                                <p class="school-set-table2 school-set-table-bor">李某某</p>
+                                <p class="school-set-table1 school-set-table-bor">李某某</p>
+                                <p class="school-set-table2 school-set-table-bor">李某某</p>
+                                <p class="school-set-table1 school-set-table-bor">李某某</p>
+                                <p class="school-set-table2 school-set-table-bor">李某某</p>
+                                <p class="school-set-table1 school-set-table-bor">李某某</p>
+                                <p class="school-set-table2 school-set-table-bor">李某某</p>
+                                <p class="school-set-table1 school-set-table-bor">李某某</p>
+                                <p class="school-set-table2 school-set-table-bor">李某某</p>
+                            </div>
+                            <div class="col-sm-3 col-6 school-set-table-header">
+                                <p>联系电话</p>
+                                <p class="school-set-table1 school-set-table-bor">0755-22557787</p>
+                                <p class="school-set-table2 school-set-table-bor">0755-22557787</p>
+                                <p class="school-set-table1 school-set-table-bor">0755-22557787</p>
+                                <p class="school-set-table2 school-set-table-bor">0755-22557787</p>
+                                <p class="school-set-table1 school-set-table-bor">0755-22557787</p>
+                                <p class="school-set-table2 school-set-table-bor">0755-22557787</p>
+                                <p class="school-set-table1 school-set-table-bor">0755-22557787</p>
+                                <p class="school-set-table2 school-set-table-bor">0755-22557787</p>
+                                <p class="school-set-table1 school-set-table-bor">0755-22557787</p>
+                                <p class="school-set-table2 school-set-table-bor">0755-22557787</p>
+                            </div>
+                            <div class="col-sm-3 col-6 school-set-table-header">
+                                <p>邮件地址</p>
+                                <p class="school-set-table1 school-set-table-bor">youjian@qq.cpm</p>
+                                <p class="school-set-table2 school-set-table-bor">youjian@qq.cpm</p>
+                                <p class="school-set-table1 school-set-table-bor">youjian@qq.cpm</p>
+                                <p class="school-set-table2 school-set-table-bor">youjian@qq.cpm</p>
+                                <p class="school-set-table1 school-set-table-bor">youjian@qq.cpm</p>
+                                <p class="school-set-table2 school-set-table-bor">youjian@qq.cpm</p>
+                                <p class="school-set-table1 school-set-table-bor">youjian@qq.cpm</p>
+                                <p class="school-set-table2 school-set-table-bor">youjian@qq.cpm</p>
+                                <p class="school-set-table1 school-set-table-bor">youjian@qq.cpm</p>
+                                <p class="school-set-table2 school-set-table-bor">youjian@qq.cpm</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- :::::::::: 右边展示内容 :::::::::: -->
+        </div>
+        </div>
+        <!-- :::::::::: 内容 :::::::::: -->
+
+
+
+
+
+
+
+    </section>
+    <!-- :::::::::: 页脚 :::::::::: -->
+    <footer id="footer">
+        <!-- <img class="foot-bg" src="dist/images/index/bottom.png" alt="" /> -->
+        <div class="container  foot-bottom">
+            <div class="row foot-bottom">
+                <div class="col-lg-4 ">
+                    <p class="img-light foot-link foot-link-text">
+
+                        <span v-for="link in links">
+                            <a v-bind:href="link.href">{{ link.text }}</a>
+                            {{ link.line }}
+                        </span>
+                    </p>
+                </div>
+                <div class="col-lg-7 ">
+                    <p class="img-light foot-text">
+                        {{ text.copyright }} &nbsp;&nbsp; {{ text.address }}
+                        </br>
+                        {{ text.phone }} &nbsp;&nbsp; {{ text.icp }}
+                    </p>
+                </div>
+                <div class="col-lg-1  foot-logo foot-text">
+                    <img class="img-fluid float-left img-light" v-bind:src="logo.src" />
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <!-- :::::::::: 页脚 :::::::::: -->
+    <script src="dist/js/jquery-3.2.1.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/vue.js"></script>
+    <script src="dist/js/school.js"></script>
+    <script src="dist/js/head-foot.js"></script>
+
+</body>
+
+</html>

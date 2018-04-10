@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>院概况</title>
+    <link rel="shortcut icon" href="dist/images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="dist/css/normalize.css">
+    <link rel="stylesheet" href="dist/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+
+<body class="school-bg">
+    <header id="header">
+        <!-- :::::::::: 顶部logo 电话 二维码 :::::::::: -->
+        <div id="header_top" class="container text-center">
+            <div class="row" v-bind:style="header_top_row">
+                <div class="col-md-6 ">
+                    <a href="index.html">
+                        <img v-bind:src="img.left.src" class="img-fluid" />
+                    </a>
+                </div>
+                <div class="header_top_phone col-md-4 col-8">
+                    <a v-bind:href="img.middle.link">
+                        <img v-bind:src="img.middle.src" v-bind:class="img.middle.class" />
+                    </a>
+                </div>
+                <div class="col-md-2 col-3">
+                    <img v-bind:src="img.right.src" v-bind:class="img.right.class" />
+                </div>
+            </div>
+        </div>
+        <!-- :::::::::: 顶部logo 电话 二维码 :::::::::: -->
+        <!-- :::::::::: 导航栏 与附加栏 :::::::::: -->
+        <div class="nav-all">
+            <nav class="navbar-light navbar navbar-expand-lg back-color-eee">
+                <div class="container">
+                    <!-- 缩小后展示 -->
+                    <!-- <div class="navbar-brand row" href="#">
+                        <div class="header_top_phone col-8">
+                            <a href="tel:0755-266551617">
+                                <img class="header_top_phone_img img-fluid img-light" src="dist/images/index/phone.png" alt=""/>
+                            </a>
+                        </div>
+                        <div class=" col-2">
+                            <img class="img-fluid float-left img-light " src="dist/images/index/2code.jpg" alt=""/>
+                        </div>
+                    </div> -->
+                    <!-- <a class="navbar-brand" href="#">Container</a> -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample" aria-controls="navbarsExample"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- 导航栏 链接 -->
+                    <div class=" collapse navbar-collapse row text-center" id="navbarsExample">
+                        <ul class="navbar-nav mr-auto col-lg-9 row">
+                            <!-- active -->
+                            <li v-for="asset in nav" v-bind:class="asset.class" @mouseenter="enter" @mouseleave="leave" class="nav-item col-lg">
+                                <a class="nav-link nav-color" v-bind:href="asset.link">{{ asset.text }}</a>
+                            </li>
+                        </ul>
+                        <!-- 搜索框 -->
+                        <form class="form-inline my-2 my-md-0 col-lg-3">
+                            <div class="nav-search-icon">
+                                <span>
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </div>
+                            <input class="nav-search form-control" type="text" placeholder="Search" aria-label="Search">
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <div @mouseleave="leave" class="nav-append" v-if="show">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col">
+                            <img class="img-fluid img-light" v-bind:src="navAdd.school.teacher.src" />
+                        </div>
+                        <div class="col-lg-2 col text-center">
+                            <p class="img-light">
+                                <a href="">
+                                    <small>{{ navAdd.school.teacher.text }}</small>
+                                    </br>
+                                    <small>{{ navAdd.school.teacher.time }}</small>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-lg-3 col">
+                            <p v-for="asset in navAdd.message.sort">
+                                <a v-bind:href="asset.link">{{ asset.p }}</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- :::::::::: 导航栏 与附加栏 :::::::::: -->
+
+    </header>
+    <!-- :::::::::: 主体内容 :::::::::: -->
+    <section id="news" class="home-index">
+        <img class="img-fluid" src="dist/images/news/top.jpg" />
+        <!-- :::::::::: 内容 :::::::::: -->
+        <div class="container school">
+
+            <div class="row">
+                <!-- :::::::::: 左边栏 :::::::::: -->
+                <div class="col-md-3">
+                    <div class="school-left">
+                        <div class="school-bor"></div>
+                        <!-- :::::::::: 标题 active 指示当前页 :::::::::: -->
+                        <div class="home-news-top school">
+                            <!-- img-light -->
+                            <img class="img-fluid home-news-logo" src="dist/images/index/news-logo.png" alt="" />
+                            <span class="home-news-title">&nbsp;新闻资讯</span>
+                        </div>
+                        <div class="home-hr school-hr"></div>
+                        <!-- :::::::::: 标题 :::::::::: -->
+                        <p class="school-left-p active">
+                            <a v-bind:href="left.inform.link">{{ left.inform.text }}</a>
+                        </p>
+                        <p class="school-left-p">
+                            <a v-bind:href="left.flash.link">{{ left.flash.text }}</a>
+                        </p>
+                        <p class="school-left-p">
+                            <a v-bind:href="left.media.link">
+                                {{ left.media.text }}
+                            </a>
+                        </p>
+                        <p class="school-left-p">
+                            <a v-bind:href="left.student.link">
+                                {{ left.student.text }}
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!-- :::::::::: 左边栏 :::::::::: -->
+                <!-- :::::::::: 右边展示内容 :::::::::: -->
+                <div class="col-md-9">
+                    <!-- :::::::::: 标题 :::::::::: -->
+
+                    <p class="school-right-title">通知公告
+                        <!-- :::::::::: 目录 :::::::::: -->
+                        <span class="float-right">首页 &gt; 新闻资讯 &gt;
+                            <span>通知公告</span>
+                        </span>
+                    </p>
+                    <div class="news-content">
+                        内容,待导入
+                    </div>
+                    <div class="nav-list-bottom row">
+                        <div class="col-xl-5 text-left">上一篇:上海交通大学科技成果亮相2017广东应博会</div>
+                        <div class="col-xl-2 text-center nav-list-bottom-btn">返回列表</div>
+                        <div class="col-xl-5 text-right">下一篇:上海交通大学科技成果亮相2017广东应博会</div>
+                    </div>
+                    <div class="footer-mark row">
+                        <div class="col-md-3">
+                            <p class="img-light">华南教育研究院
+                                </br>电话：0755-26551816
+                                </br>传真：0755-26551617
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="img-light">E-mail:szyjy@sjtu.edu.cn</br>Http://www.szsjtu.com </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="img-light">地址：深圳市南山区科苑南路虚拟大学园B202</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- :::::::::: 右边展示内容 :::::::::: -->
+            </div>
+        </div>
+        <!-- :::::::::: 内容 :::::::::: -->
+    </section>
+    <!-- :::::::::: 页脚 :::::::::: -->
+    <footer id="footer">
+        <!-- <img class="foot-bg" src="dist/images/index/bottom.png" alt="" /> -->
+        <div class="container  foot-bottom">
+            <div class="row foot-bottom">
+                <div class="col-lg-4 ">
+                    <p class="img-light foot-link foot-link-text">
+
+                        <span v-for="link in links">
+                            <a v-bind:href="link.href">{{ link.text }}</a>
+                            {{ link.line }}
+                        </span>
+                    </p>
+                </div>
+                <div class="col-lg-7 ">
+                    <p class="img-light foot-text">
+                        {{ text.copyright }} &nbsp;&nbsp; {{ text.address }}
+                        </br>
+                        {{ text.phone }} &nbsp;&nbsp; {{ text.icp }}
+                    </p>
+                </div>
+                <div class="col-lg-1  foot-logo foot-text">
+                    <img class="img-fluid float-left img-light" v-bind:src="logo.src" />
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <!-- :::::::::: 页脚 :::::::::: -->
+
+
+
+
+
+    <script src="dist/js/jquery-3.2.1.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/vue.js"></script>
+    <script src="dist/js/news.js"></script>
+    <script src="dist/js/head-foot.js"></script>
+
+</body>
+
+</html>

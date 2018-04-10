@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>院概况</title>
+    <link rel="shortcut icon" href="dist/images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="dist/css/normalize.css">
+    <link rel="stylesheet" href="dist/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+
+<body class="school-bg">
+    <header id="header">
+        <!-- :::::::::: 顶部logo 电话 二维码 :::::::::: -->
+        <div id="header_top" class="container text-center">
+            <div class="row" v-bind:style="header_top_row">
+                <div class="col-md-6 ">
+                    <a href="index.html">
+                        <img v-bind:src="img.left.src" class="img-fluid" />
+                    </a>
+                </div>
+                <div class="header_top_phone col-md-4 col-8">
+                    <a v-bind:href="img.middle.link">
+                        <img v-bind:src="img.middle.src" v-bind:class="img.middle.class" />
+                    </a>
+                </div>
+                <div class="col-md-2 col-3">
+                    <img v-bind:src="img.right.src" v-bind:class="img.right.class" />
+                </div>
+            </div>
+        </div>
+        <!-- :::::::::: 顶部logo 电话 二维码 :::::::::: -->
+        <!-- :::::::::: 导航栏 与附加栏 :::::::::: -->
+        <div class="nav-all">
+            <nav class="navbar-light navbar navbar-expand-lg back-color-eee">
+                <div class="container">
+                    <!-- 缩小后展示 -->
+                    <!-- <div class="navbar-brand row" href="#">
+                        <div class="header_top_phone col-8">
+                            <a href="tel:0755-266551617">
+                                <img class="header_top_phone_img img-fluid img-light" src="dist/images/index/phone.png" alt=""/>
+                            </a>
+                        </div>
+                        <div class=" col-2">
+                            <img class="img-fluid float-left img-light " src="dist/images/index/2code.jpg" alt=""/>
+                        </div>
+                    </div> -->
+                    <!-- <a class="navbar-brand" href="#">Container</a> -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample" aria-controls="navbarsExample"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- 导航栏 链接 -->
+                    <div class=" collapse navbar-collapse row text-center" id="navbarsExample">
+                        <ul class="navbar-nav mr-auto col-lg-9 row">
+                            <!-- active -->
+                            <li v-for="asset in nav" v-bind:class="asset.class" @mouseenter="enter" @mouseleave="leave" class="nav-item col-lg">
+                                <a class="nav-link nav-color" v-bind:href="asset.link">{{ asset.text }}</a>
+                            </li>
+                        </ul>
+                        <!-- 搜索框 -->
+                        <form class="form-inline my-2 my-md-0 col-lg-3">
+                            <div class="nav-search-icon">
+                                <span>
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </div>
+                            <input class="nav-search form-control" type="text" placeholder="Search" aria-label="Search">
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <div @mouseleave="leave" class="nav-append" v-if="show">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col">
+                            <img class="img-fluid img-light" v-bind:src="navAdd.school.teacher.src" />
+                        </div>
+                        <div class="col-lg-2 col text-center">
+                            <p class="img-light">
+                                <a href="">
+                                    <small>{{ navAdd.school.teacher.text }}</small>
+                                    </br>
+                                    <small>{{ navAdd.school.teacher.time }}</small>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-lg-3 col">
+                            <p v-for="asset in navAdd.message.sort">
+                                <a v-bind:href="asset.link">{{ asset.p }}</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- :::::::::: 导航栏 与附加栏 :::::::::: -->
+
+    </header>
+    <!-- :::::::::: 主体内容 :::::::::: -->
+    <section id="educate" class="home-index">
+        <img class="img-fluid" src="dist/images/educate.jpg" />
+        <!-- :::::::::: 内容 :::::::::: -->
+        <div class="container school">
+
+            <div class="row">
+                <!-- :::::::::: 左边栏 :::::::::: -->
+                <div class="col-md-3">
+                    <div class="school-left">
+                        <div class="school-bor"></div>
+                        <!-- :::::::::: 标题 active 指示当前页 :::::::::: -->
+                        <div class="home-news-top school">
+                            <!-- img-light -->
+                            <img class="img-fluid home-news-logo" src="dist/images/index/train-logo.png" alt="" />
+                            <span class="home-news-title">&nbsp;培训教育</span>
+                        </div>
+                        <div class="home-hr school-hr"></div>
+                        <!-- :::::::::: 标题 :::::::::: -->
+                        <p class="school-left-p ">
+                            <a v-bind:href="left.graduate.link">{{ left.graduate.text }}</a>
+                        </p>
+                        <p class="school-left-p">
+                            <a v-bind:href="left.webucation.link">{{ left.webucation.text }}</a>
+                        </p>
+                        <p class="school-left-p">
+                            <a v-bind:href="left.enterprise.link">
+                                {{ left.enterprise.text }}
+                            </a>
+                        </p>
+                        <p class="school-left-p active">
+                            <a v-bind:href="left.login.link">
+                                {{ left.login.text }}
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!-- :::::::::: 左边栏 :::::::::: -->
+                <!-- :::::::::: 右边展示内容 :::::::::: -->
+                <div class="col-md-9">
+                    <!-- :::::::::: 标题 :::::::::: -->
+
+                    <p class="school-right-title">通知公告
+                        <!-- :::::::::: 目录 :::::::::: -->
+                        <span class="float-right">首页 &gt; 新闻资讯 &gt;
+                            <span>通知公告</span>
+                        </span>
+                    </p>
+                    <div class="idea-content">
+                        <form class="col-lg-7">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">
+                                    姓名
+                                    <span>({{login.verify.name}})</span>
+                                </label>
+                                <input v-on:input="int" v-model.trim="login.form.name" maxlength="15" type="text" class="form-control" id="exampleFormControlInput1">
+                                <span class="form-star" v-if="!login.form.name">*</span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    性别
+                                    <span>({{login.verify.sex}})</span>
+                                </label>
+                                <div class="educate-sex">
+                                    <span @click="sex_sele" v-bind:class="sex_select.man">男</span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span @click="sex_sele" v-bind:class="sex_select.woman">女</span>
+                                </div>
+                                <span class="form-star" v-if="!login.form.sex">*</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput3">
+                                    报考类别
+                                    <span>({{login.verify.fortype}})</span>
+                                </label>
+                                <select v-on:click="int" v-model.trim="login.form.fortype" class="form-control" id="exampleFormControlInput3">
+                                    <option disabled value="">== 选择类型 ==</option>
+                                    <option v-for="expertSort in expertSorts" v-bind:value="expertSort.text">{{expertSort.text}}</option>
+                                </select>
+                                <span class="form-star" v-if="!login.form.fortype">*</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput4">
+                                    报考专业
+                                    <span>({{login.verify.forprofession}})</span>
+                                </label>
+                                <input v-on:input="int" v-model.trim="login.form.forprofession" maxlength="15" type="text" class="form-control" id="exampleFormControlInput4">
+                                <span class="form-star" v-if="!login.form.forprofession">*</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput5">
+                                    手机号码
+                                    <span>({{login.verify.phone}})</span>
+                                </label>
+                                <input v-on:input="int" v-model.trim="login.form.phone" type="number" class="form-control" id="exampleFormControlInput5">
+                                <span class="form-star" v-if="!login.form.phone">*</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput6">
+                                    E-mail
+                                    <span>({{login.verify.email}})</span>
+                                </label>
+                                <input v-on:input="int" v-model.trim="login.form.email" type="email" class="form-control" id="exampleFormControlInput6">
+                                <span class="form-star" v-if="!login.form.email">*</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea7">
+                                    留言内容
+                                    <span>(感谢您的留言内容)</span>
+                                </label>
+                                <textarea v-on:input="int" v-model.trim="login.form.content" class="form-control" id="exampleFormControlTextarea7" rows="6"></textarea>
+                            </div>
+                            <button @click="submit" type="button" class="btn">提交</button>&nbsp;&nbsp;
+                            <button @click="reset" type="button" class="btn">重置</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- :::::::::: 右边展示内容 :::::::::: -->
+            </div>
+        </div>
+        <!-- :::::::::: 内容 :::::::::: -->
+    </section>
+    <!-- :::::::::: 页脚 :::::::::: -->
+    <footer id="footer">
+        <!-- <img class="foot-bg" src="dist/images/index/bottom.png" alt="" /> -->
+        <div class="container  foot-bottom">
+            <div class="row foot-bottom">
+                <div class="col-lg-4 ">
+                    <p class="img-light foot-link foot-link-text">
+
+                        <span v-for="link in links">
+                            <a v-bind:href="link.href">{{ link.text }}</a>
+                            {{ link.line }}
+                        </span>
+                    </p>
+                </div>
+                <div class="col-lg-7 ">
+                    <p class="img-light foot-text">
+                        {{ text.copyright }} &nbsp;&nbsp; {{ text.address }}
+                        </br>
+                        {{ text.phone }} &nbsp;&nbsp; {{ text.icp }}
+                    </p>
+                </div>
+                <div class="col-lg-1  foot-logo foot-text">
+                    <img class="img-fluid float-left img-light" v-bind:src="logo.src" />
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <!-- :::::::::: 页脚 :::::::::: -->
+
+
+
+    <script src="dist/js/ip.js"></script>
+    <script src="dist/js/jquery-3.2.1.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/vue.js"></script>
+    <script src="dist/js/educate.js"></script>
+    <script src="dist/js/head-foot.js"></script>
+</body>
+
+</html>
